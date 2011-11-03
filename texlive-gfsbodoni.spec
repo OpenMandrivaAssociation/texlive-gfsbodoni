@@ -1,3 +1,9 @@
+# revision 19440
+# category Package
+# catalog-ctan /fonts/greek/gfs/gfsbodoni
+# catalog-date 2010-01-18 14:29:22 +0100
+# catalog-license ofl
+# catalog-version 1.01
 Name:		texlive-gfsbodoni
 Version:	1.01
 Release:	1
@@ -156,6 +162,7 @@ formats.
 %doc %{_texmfdistdir}/doc/fonts/gfsbodoni/README
 %doc %{_texmfdistdir}/doc/fonts/gfsbodoni/README.TEXLIVE
 %doc %{_texmfdistdir}/doc/fonts/gfsbodoni/gfsbodoni.pdf
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -166,3 +173,5 @@ formats.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
