@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 Bodoni's Greek fonts in the 18th century broke, for the first
@@ -29,20 +27,12 @@ fonts is provided, offering OT1, T1 and LGR encodings. The
 fonts themselves are provided in Adobe Type 1 and OpenType
 formats.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -163,7 +153,6 @@ formats.
 %doc %{_texmfdistdir}/doc/fonts/gfsbodoni/README
 %doc %{_texmfdistdir}/doc/fonts/gfsbodoni/README.TEXLIVE
 %doc %{_texmfdistdir}/doc/fonts/gfsbodoni/gfsbodoni.pdf
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -174,5 +163,3 @@ formats.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
