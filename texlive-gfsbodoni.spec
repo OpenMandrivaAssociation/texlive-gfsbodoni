@@ -6,7 +6,7 @@
 # catalog-version 1.01
 Name:		texlive-gfsbodoni
 Version:	1.01
-Release:	7
+Release:	8
 Summary:	A Greek and Latin font based on Bodoni
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/greek/gfs/gfsbodoni
