@@ -1,6 +1,6 @@
 Name:		texlive-gfsbodoni
 Version:	28484
-Release:	1
+Release:	2
 Summary:	A Greek and Latin font based on Bodoni
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/greek/gfs/gfsbodoni
